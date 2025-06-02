@@ -1,0 +1,108 @@
+USE [loja]
+GO
+
+INSERT INTO [dbo].[usuario]
+           ([idUsuario]
+           ,[nome]
+           ,[login]
+           ,[senha])
+     VALUES
+           (<idUsuario, int,>
+           ,<nome, varchar(255),>
+           ,<login, varchar(50),>
+           ,<senha, varchar(50),>)
+GO
+
+
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[movimento]
+           ([idMovimento]
+           ,[Usuario_idUsuario]
+           ,[Pessoa_idPessoa]
+           ,[tipo]
+           ,[dataMovimento])
+     VALUES
+           (<idMovimento, int,>
+           ,<Usuario_idUsuario, int,>
+           ,<Pessoa_idPessoa, int,>
+           ,<tipo, char(1),>
+           ,<dataMovimento, datetime,>)
+GO
+
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[item_movimentado]
+           ([idMovimento]
+           ,[idProduto]
+           ,[quantidade]
+           ,[valorUnitario])
+     VALUES
+           (<idMovimento, int,>
+           ,<idProduto, int,>
+           ,<quantidade, int,>
+           ,<valorUnitario, numeric(10,2),>)
+GO
+
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[pessoa]
+           ([idPessoa]
+           ,[nome]
+           ,[logradouro]
+           ,[cidade]
+           ,[estado]
+           ,[telefone]
+           ,[email])
+     VALUES
+           (<idPessoa, int,>
+           ,<nome, varchar(255),>
+           ,<logradouro, varchar(255),>
+           ,<cidade, varchar(255),>
+           ,<estado, char(2),>
+           ,<telefone, varchar(11),>
+           ,<email, varchar(255),>)
+GO
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[pessoa_fisica]
+           ([idPessoa]
+           ,[cpf])
+     VALUES
+           (<idPessoa, int,>
+           ,<cpf, char(11),>)
+GO
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[pessoa_juridica]
+           ([idPessoa]
+           ,[cnpj])
+     VALUES
+           (<idPessoa, int,>
+           ,<cnpj, char(14),>)
+GO
+
+USE [loja]
+GO
+
+INSERT INTO [dbo].[produto]
+           ([idProduto]
+           ,[nome]
+           ,[quantidade]
+           ,[precoVenda])
+     VALUES
+           (<idProduto, int,>
+           ,<nome, varchar(255),>
+           ,<quantidade, int,>
+           ,<precoVenda, numeric(10,2),>)
+GO
